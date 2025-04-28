@@ -19,6 +19,18 @@ class UserService
     return User::query()->create($data);
   }
 
+  public function updateUser(User $user, array $data)
+  {
+    if($data['image'])
+    {
+      $imagePath = $this->storeFile($data['image']);
+      $data['image_path'] = $imagePath;
+      unset($data['image']); 
+    }
+    $user->update($data);
+  }
+
+
   public function storeFile(UploadedFile $file)
   {
     $filePath = Storage::disk('public')->putFile('avatars', $file);
@@ -30,5 +42,6 @@ class UserService
   {
     return Hash::make($password);
   }
+
 
 }

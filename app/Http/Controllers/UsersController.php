@@ -36,7 +36,8 @@ class UsersController extends Controller
 
     public function edit(User $user, UpdateUserRequest $request)
     {
-        
+        UserFacade::updateUser($user, $request->validated());
+        return redirect()->route('users.index');
     }
 
     public function show(User $user)
