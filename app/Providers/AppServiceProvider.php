@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Facade\FilenameFacade;
+use App\Services\FileNameService;
+use App\Services\UserService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(UserService::class, function() {
+            return new UserService();
+        });
+
+        $this->app->singleton(FileNameService::class, function () {
+            return new FileNameService();
+        });
     }
 
     /**
