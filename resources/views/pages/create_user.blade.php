@@ -51,10 +51,10 @@
         </div>
         <div class="mb-3">
             <label for="inputDate" class="form-label">Дата рождения</label>
-            <input type="date" class="form-control" name="date_birth" value="{{ old('date_birth') }}" id="inputDate">
+            <input type="date" class="form-control" name="birth_date" value="{{ old('birth_date') }}" id="inputDate">
             <div id="nameHelp" class="form-text">
-              @if ($errors->has('date_birth'))
-                  <div class="error">{{ $errors->first('date_birth') }}</div>
+              @if ($errors->has('birth_date'))
+                  <div class="error">{{ $errors->first('birth_date ') }}</div>
               @endif
           </div>
         </div>
