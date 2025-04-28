@@ -18,9 +18,6 @@ class AppServiceProvider extends ServiceProvider
             return new UserService();
         });
 
-        $this->app->singleton(FileNameService::class, function () {
-            return new FileNameService();
-        });
     }
 
     /**

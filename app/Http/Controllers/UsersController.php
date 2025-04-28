@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Facade\UserFacade;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\User;
 use Dotenv\Util\Str;
 use Illuminate\Http\Request;
@@ -28,12 +29,12 @@ class UsersController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function update(user $user)
+    public function update(User $user)
     {
-
+        return view('pages.update_user', ['user' => $user]);
     }
 
-    public function edit(User $user)
+    public function edit(User $user, UpdateUserRequest $request)
     {
         
     }
@@ -43,8 +44,9 @@ class UsersController extends Controller
         return view('pages.show_user', ['user' => $user]);
     }
 
-    public function delete()
+    public function delete(User $user)
     {
-
+        $user->delete();
+        return redirect()->route('users.index');
     }
 }

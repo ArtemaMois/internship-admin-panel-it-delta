@@ -1,0 +1,34 @@
+.userinfo__header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.userinfo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.userinfo__login {
+    color: rgb(141, 141, 141);
+}
+
+.userinfo__avatar {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userinfo__row {
+    display: flex;
+    gap: 15px;
+}
+
+.userinfo__label {
+    font-weight: 600;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

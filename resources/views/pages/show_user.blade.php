@@ -5,8 +5,8 @@
     <img class="userinfo__image" src="{{ asset('storage/'. $user->image_path) }}" alt="" width="150" height="150">
   </div>
   <div class="userinfo__text">
-    <h1>{{ $user->name }}</h1>
-    <h3>{{ $user->login }}</h3>
+    <h1 class="userinfo__name">{{ $user->name }}</h1>
+    <h3 class="userinfo__login">{{ $user->login }}</h3>
   </div>
 </div>
 <div class="userinfo">

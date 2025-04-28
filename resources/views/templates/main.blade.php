@@ -9,6 +9,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/show.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/update.css') }}">
     <title>Admin-panel</title>
 </head>
 
