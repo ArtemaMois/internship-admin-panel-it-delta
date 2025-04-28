@@ -4,6 +4,7 @@ use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
+// url для всех запросов
 Route::controller(UsersController::class)->group(function () {
     Route::get('/users/new', 'create')->name('users.new');
     Route::get('/', 'index')->name('users.index');

@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class UserService
 {
-  public function createUser(array $data)
+
+  // функция для создания пользователя
+  public function createUser(array $data): User
   {
     $imageUrl = $this->storeFile($data['image']);
     $password = $this->hashPassword($data['password']);
@@ -19,6 +21,8 @@ class UserService
     return User::query()->create($data);
   }
 
+
+  // функция для обновления пользователя
   public function updateUser(User $user, array $data)
   {
     if($data['image'])
@@ -31,14 +35,15 @@ class UserService
   }
 
 
-  public function storeFile(UploadedFile $file)
+  // функция для сохранения файла
+  private function storeFile(UploadedFile $file): bool|string
   {
     $filePath = Storage::disk('public')->putFile('avatars', $file);
     return $filePath;
   }
 
-
-  public function hashPassword(string $password)
+  // хэшируем пароль
+  private function hashPassword(string $password): string
   {
     return Hash::make($password);
   }
