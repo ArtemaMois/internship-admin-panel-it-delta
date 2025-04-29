@@ -54,7 +54,7 @@
             <input type="date" class="form-control" name="birth_date" value="{{ old('birth_date') }}" id="inputDate">
             <div id="nameHelp" class="form-text">
               @if ($errors->has('birth_date'))
-                  <div class="error">{{ $errors->first('birth_date ') }}</div>
+                  <div class="error">{{ $errors->first('birth_date') }}</div>
               @endif
           </div>
         </div>

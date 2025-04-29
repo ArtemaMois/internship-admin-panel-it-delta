@@ -25,7 +25,7 @@ class UserService
   // функция для обновления пользователя
   public function updateUser(User $user, array $data)
   {
-    if($data['image'])
+    if(isset($data['image']))
     {
       $imagePath = $this->storeFile($data['image']);
       $data['image_path'] = $imagePath;
